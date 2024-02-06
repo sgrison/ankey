@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "languages": ["Japanese"],
+  "words": [
+	{
+	  "word_shown": "日本",
+	  "word_towrite": "Nihon",
+	  "language": "Japanese",
+	  "level": "1"
+	},
+	{
+	  "word_shown": "愛",
+	  "word_towrite": "Ai",
+	  "language": "Japanese",
+	  "level": "1"
+	}
+  ]
+}

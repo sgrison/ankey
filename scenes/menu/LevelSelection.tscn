@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0v6y7xqn5r82"]
+
+[ext_resource type="Texture2D" uid="uid://d1b0e3hdmdbks" path="res://images/french_village2.webp" id="1_mnd3s"]
+
+[node name="LevelSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dall·e2024-02-0618_37_31-CreateAPixelArtImageOfATraditionalFrenchVillageInAWideFormat,EmphasizingTheCharmingDetails_TheVillageShouldFeatureStoneHousesW" type="Sprite2D" parent="."]
+position = Vector2(579, 327)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("1_mnd3s")
