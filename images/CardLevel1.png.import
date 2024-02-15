@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1b0e3hdmdbks"
-path="res://.godot/imported/french_village2.webp-f3783321b02c0ab6bb993fde763dd0ac.ctex"
+uid="uid://bkksan7i3w320"
+path="res://.godot/imported/CardLevel1.png-a4b72e8cd715433e82926669c9d48904.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/french_village2.webp"
-dest_files=["res://.godot/imported/french_village2.webp-f3783321b02c0ab6bb993fde763dd0ac.ctex"]
+source_file="res://images/CardLevel1.png"
+dest_files=["res://.godot/imported/CardLevel1.png-a4b72e8cd715433e82926669c9d48904.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgd4my5t6woiy"
-path="res://.godot/imported/french_p.png-c735cee2d0a35e172be55321c2b6f03c.ctex"
+uid="uid://d1b0e3hdmdbks"
+path="res://.godot/imported/french_village2.webp-f526b5f2f2ccb0c44b399673a1aa4c83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/french_p.png"
-dest_files=["res://.godot/imported/french_p.png-c735cee2d0a35e172be55321c2b6f03c.ctex"]
+source_file="res://images/old/french_village2.webp"
+dest_files=["res://.godot/imported/french_village2.webp-f526b5f2f2ccb0c44b399673a1aa4c83.ctex"]
 
 [params]
 

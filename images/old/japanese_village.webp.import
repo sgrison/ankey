@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caphke3e1a1ub"
-path="res://.godot/imported/japanese.png-ae89532ca2a0f0e1a72f5e6ae3ef3246.ctex"
+uid="uid://ou7kuekrac4x"
+path="res://.godot/imported/japanese_village.webp-e0460e4d5cc8098275f744e3c5d8b02a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/japanese.png"
-dest_files=["res://.godot/imported/japanese.png-ae89532ca2a0f0e1a72f5e6ae3ef3246.ctex"]
+source_file="res://images/old/japanese_village.webp"
+dest_files=["res://.godot/imported/japanese_village.webp-e0460e4d5cc8098275f744e3c5d8b02a.ctex"]
 
 [params]
 

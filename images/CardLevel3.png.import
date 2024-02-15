@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ou7kuekrac4x"
-path="res://.godot/imported/japanese_village.webp-c9826f03e1af4faa47e9595a928e1810.ctex"
+uid="uid://wowsqj08hqtf"
+path="res://.godot/imported/CardLevel3.png-31e1ee0720e6530832075be3f77c095b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/japanese_village.webp"
-dest_files=["res://.godot/imported/japanese_village.webp-c9826f03e1af4faa47e9595a928e1810.ctex"]
+source_file="res://images/CardLevel3.png"
+dest_files=["res://.godot/imported/CardLevel3.png-31e1ee0720e6530832075be3f77c095b.ctex"]
 
 [params]
 

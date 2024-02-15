@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8hnglt6opl7y"
-path="res://.godot/imported/japanese_p.png-493c44794f5d9fd5b28caaa900802a9e.ctex"
+uid="uid://dgd4my5t6woiy"
+path="res://.godot/imported/french_p.png-15625d87916aec4f08e1206f71c0efb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/japanese_p.png"
-dest_files=["res://.godot/imported/japanese_p.png-493c44794f5d9fd5b28caaa900802a9e.ctex"]
+source_file="res://images/old/french_p.png"
+dest_files=["res://.godot/imported/french_p.png-15625d87916aec4f08e1206f71c0efb4.ctex"]
 
 [params]
 
