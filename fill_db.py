@@ -1,12 +1,13 @@
 import sqlite3
+import random
 
-def create_tables(cursor):
-    """Create the Decks and Cards tables if they don't exist."""
+def setup_database(cursor):
+    """Create tables for the flashcards database."""
     cursor.execute('''CREATE TABLE IF NOT EXISTS Decks (
                       DeckID INTEGER PRIMARY KEY AUTOINCREMENT,
                       DeckName TEXT NOT NULL,
                       DeckDescription TEXT)''')
-    
+
     cursor.execute('''CREATE TABLE IF NOT EXISTS Cards (
                       CardID INTEGER PRIMARY KEY AUTOINCREMENT,
                       DeckID INTEGER,
@@ -14,62 +15,65 @@ def create_tables(cursor):
                       CardAnswer TEXT,
                       FOREIGN KEY (DeckID) REFERENCES Decks(DeckID))''')
 
-def insert_decks(cursor):
-    """Inserts the 'Capitales' and 'KanjiToRomaji' decks into the Decks table."""
+    cursor.execute('''CREATE TABLE IF NOT EXISTS Levels (
+                      LevelID INTEGER PRIMARY KEY AUTOINCREMENT,
+                      DeckID INTEGER,
+                      LevelName TEXT NOT NULL,
+                      FOREIGN KEY (DeckID) REFERENCES Decks(DeckID))''')
+
+    cursor.execute('''CREATE TABLE IF NOT EXISTS CardLevel (
+                      CardLevelID INTEGER PRIMARY KEY AUTOINCREMENT,
+                      CardID INTEGER,
+                      LevelID INTEGER,
+                      FOREIGN KEY (CardID) REFERENCES Cards(CardID),
+                      FOREIGN KEY (LevelID) REFERENCES Levels(LevelID))''')
+
+def insert_initial_data(cursor):
+    """Insert decks and their specific cards. Then, create levels for each deck."""
     decks_to_add = [('Capitales', 'A deck of capital cities.'),
                     ('KanjiToRomaji', 'A deck for learning Kanji characters and their Romaji transliterations.')]
-    cursor.executemany('INSERT INTO Decks (DeckName, DeckDescription) VALUES (?, ?)', decks_to_add)
 
-def insert_cards(cursor):
-    """Inserts cards into the Cards table for the newly created decks."""
-    # Fetch the DeckIDs for "Capitales" and "KanjiToRomaji"
-    cursor.execute("SELECT DeckID FROM Decks WHERE DeckName = 'Capitales'")
-    capitales_deck_id = cursor.fetchone()[0]
-    cursor.execute("SELECT DeckID FROM Decks WHERE DeckName = 'KanjiToRomaji'")
-    kanji_to_romaji_deck_id = cursor.fetchone()[0]
+    # Insert Decks and Cards
+    for deck_name, description in decks_to_add:
+        cursor.execute('INSERT INTO Decks (DeckName, DeckDescription) VALUES (?, ?)', (deck_name, description))
+        deck_id = cursor.lastrowid  # Get the ID of the inserted deck
 
-    # Cards for the "Capitales" deck
-    capitales_cards = [
-        (capitales_deck_id, 'France', 'Paris'),
-        (capitales_deck_id, 'Germany', 'Berlin'),
-        (capitales_deck_id, 'Italy', 'Rome'),
-        # Add more as needed
-    ]
+        if deck_name == 'Capitales':
+            cards = [('France', 'Paris'), ('Germany', 'Berlin'), ('Italy', 'Rome')]
+        elif deck_name == 'KanjiToRomaji':
+            cards = [('日', 'Ni'), ('本', 'Hon'), ('人', 'Jin')]
 
-    # Cards for the "KanjiToRomaji" deck
-    kanji_to_romaji_cards = [
-        (kanji_to_romaji_deck_id, '日', 'Ni'),
-        (kanji_to_romaji_deck_id, '本', 'Hon'),
-        (kanji_to_romaji_deck_id, '人', 'Jin'),
-        # Add more as needed
-    ]
+        for content, answer in cards:
+            cursor.execute('INSERT INTO Cards (DeckID, CardVisible, CardHidden) VALUES (?, ?, ?)', (deck_id, content, answer))
+        
+        # Create 10 Levels for each Deck
+        for i in range(1, 11):
+            cursor.execute('INSERT INTO Levels (DeckID, LevelName) VALUES (?, ?)', (deck_id, f'Level {i}'))
 
-    # Insert the cards into the Cards table
-    cursor.executemany('INSERT INTO Cards (DeckID, CardVisible, CardHidden) VALUES (?, ?, ?)', capitales_cards)
-    cursor.executemany('INSERT INTO Cards (DeckID, CardVisible, CardHidden) VALUES (?, ?, ?)', kanji_to_romaji_cards)
+def assign_random_cards_to_levels(cursor):
+    """For each deck, assign 3 random cards to each of its levels."""
+    cursor.execute("SELECT DeckID, LevelID FROM Levels")
+    level_info = cursor.fetchall()
+
+    for deck_id, level_id in level_info:
+        cursor.execute("SELECT CardID FROM Cards WHERE DeckID = ?", (deck_id,))
+        cards = [card[0] for card in cursor.fetchall()]
+        selected_cards = random.sample(cards, min(len(cards), 3))
+
+        for card_id in selected_cards:
+            cursor.execute('INSERT INTO CardLevel (CardID, LevelID) VALUES (?, ?)', (card_id, level_id))
 
 def main():
-    # Connect to your database
     conn = sqlite3.connect('data.db')
     cursor = conn.cursor()
 
-    # Create tables
-    create_tables(cursor)
+    # setup_database(cursor)
+    insert_initial_data(cursor)
+    assign_random_cards_to_levels(cursor)
 
-    # Insert decks
-    insert_decks(cursor)
-
-    # Commit the changes to ensure decks are inserted before adding cards
-    conn.commit()
-
-    # Insert cards
-    insert_cards(cursor)
-
-    # Commit the changes and close the connection
     conn.commit()
     conn.close()
-
-    print('Decks and cards added successfully.')
+    print("Database setup with decks, cards, levels, and card assignments complete.")
 
 if __name__ == "__main__":
     main()
