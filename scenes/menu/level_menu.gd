@@ -12,8 +12,6 @@ func _ready():
 	# Fetch deck names from the database
 	var selected_deck_name = Global.selected_deck_name
 	var selected_deck_id = Global.selected_deck_id
-	print(selected_deck_name)
-	print(selected_deck_id)
 	
 	# Fetch deck names from the database
 	db.query_with_bindings("SELECT LevelName FROM Levels WHERE DeckID = ?", [selected_deck_id])
@@ -25,7 +23,7 @@ func _ready():
 	for result in db.query_result:
 		var button = Button.new()
 		button.text = result["LevelName"]  # Assuming 'DeckName' is the column name
-		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # Make button expand to fill the container width
+		button.add_theme_font_size_override("font_size", DisplayServer.screen_get_size()[0]/100)
 		button.connect("pressed", _on_Button_pressed.bind(button))
 		vbox.add_child(button)
 

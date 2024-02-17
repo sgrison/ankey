@@ -18,11 +18,10 @@ func _ready():
 	# Loop through the query results and create buttons
 	for result in db.query_result:
 		
-		print(result)
 		var button = Button.new()
-		button.text = result["DeckName"]  # Assuming 'DeckName' is the column name
+		button.text = result["DeckName"]
+		button.add_theme_font_size_override("font_size", DisplayServer.screen_get_size()[0]/100)
 		button.set_meta("DeckID", result["DeckID"])
-		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL  # Make button expand to fill the container width
 		button.connect("pressed", _on_Button_pressed.bind(button))
 		vbox.add_child(button)
 
