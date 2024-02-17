@@ -4,6 +4,11 @@ var db: SQLite
 
 
 func _ready():
+	
+	# Change back button size
+	var backbutton = $CenterContainer/VBoxContainer/BackButton
+	backbutton.add_theme_font_size_override("font_size", DisplayServer.screen_get_size()[0]/100)
+	
 	# Open the database
 	db = SQLite.new()
 	db.path = "res://data.db"
