@@ -1,4 +1,6 @@
-# Description
+# Ankey
+
+<img src="images/main.webp" alt="alt text" width="300">
 
 This Godot project aims at making a fun and interactive version of the worldwide used Anki App.
 
