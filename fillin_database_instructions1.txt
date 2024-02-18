@@ -1,0 +1,10 @@
+Insert a deck named "Capitales".
+Insert cards with European capitals and their corresponding countries.
+Insert levels:
+Two levels of type 0 ("Learn 1" and "Learn 2") with 5 different capitals each.
+One level of type 1 ("Recap 1-2") containing all capitals from "Learn 1" and "Learn 2".
+Two more levels of type 0 ("Learn 3" and "Learn 4") with 5 new capitals each.
+One level of type 1 ("Recap 3-4") with capitals from "Learn 3" and "Learn 4".
+One level of type 2 ("Big Recap 1-4") with cards from all "Learn" levels.
+One level of type 3 ("Boss 1") with all cards from "Learn" levels.
+Associate cards with levels through the CardLevel table.

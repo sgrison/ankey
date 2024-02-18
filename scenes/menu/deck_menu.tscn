@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc4ajx8glwxrh"]
+[gd_scene load_steps=3 format=3 uid="uid://cc4ajx8glwxrh"]
 
 [ext_resource type="Script" path="res://scenes/menu/deck_menu.gd" id="1_efnbs"]
+[ext_resource type="Texture2D" uid="uid://ogjrg6lv0rgm" path="res://images/main.webp" id="2_xgwmy"]
 
 [node name="DeckMenu" type="Control"]
 layout_mode = 3
@@ -11,11 +12,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_efnbs")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.565
+anchor_bottom = 1.0
+offset_right = -60.8
+offset_bottom = -56.0
+scale = Vector2(1.06, 1.06)
+texture = ExtResource("2_xgwmy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.565
+anchor_right = 1.0
+anchor_bottom = 0.2
+offset_left = 0.200005
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[center]ANKEY[/center]"
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1086.0
+offset_top = 216.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 

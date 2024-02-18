@@ -1,0 +1,32 @@
+Decks Table
+
+DeckID: Integer, Primary Key, Unique, Auto Increment
+DeckName: String, Not Null
+DeckDescription: String
+
+Cards Table
+
+CardID: Integer, Primary Key, Unique, Auto Increment
+CardQuestion: String, Not Null
+CardAnswer: String, Not Null
+DeckID: Integer, Foreign Key connected to DeckID in the Decks table
+
+Levels Table
+
+LevelID: Integer, Primary Key, Unique, Auto Increment
+LevelName: String, Not Null
+LevelDescription: String
+DeckID: Integer, Foreign Key connected to DeckID in the Decks table
+LevelType: Integer, Foreign Key connected to LevelTypeID in the LevelTypes table
+LevelCompletion: Integer, equals to 0 at the beginning
+
+CardLevel Intermediate Table
+
+CardLevelID: Integer, Primary Key, Unique, Auto Increment
+CardID: Integer, Foreign Key connected to CardID in the Cards table
+LevelID: Integer, Foreign Key connected to LevelID in the Levels table
+
+LevelTypes Table
+
+LevelTypeID: Integer, Primary Key, Unique, Auto Increment
+LevelType: Integer, Constraint: between 0 and 3
