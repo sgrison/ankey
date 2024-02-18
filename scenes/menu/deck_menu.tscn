@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
-text = "[center]ANKEY[/center]"
+text = "[center][color=#A0B427]AN[/color][color=#EAD2D6]KEY[/color][/center]"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
