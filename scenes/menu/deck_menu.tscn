@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc4ajx8glwxrh"]
+[gd_scene load_steps=4 format=3 uid="uid://cc4ajx8glwxrh"]
 
 [ext_resource type="Script" path="res://scenes/menu/deck_menu.gd" id="1_efnbs"]
 [ext_resource type="Texture2D" uid="uid://ogjrg6lv0rgm" path="res://images/main.webp" id="2_xgwmy"]
+[ext_resource type="Script" path="res://scenes/menu/AudioStreamPlayer.gd" id="3_rh32e"]
 
 [node name="DeckMenu" type="Control"]
 layout_mode = 3
@@ -50,3 +51,6 @@ grow_vertical = 2
 custom_minimum_size = Vector2(500, 2.08165e-12)
 layout_mode = 2
 theme_override_constants/separation = 10
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("3_rh32e")
