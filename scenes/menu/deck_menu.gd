@@ -6,7 +6,7 @@ var db: SQLite
 func _ready():
 	# Open the database
 	db = SQLite.new()
-	db.path = "res://data.db"
+	db.path = "res://database/data.db"
 	db.open_db()
 	
 	# Fetch deck names from the database
