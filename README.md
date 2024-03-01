@@ -9,3 +9,5 @@ Graphics are made by me or using OpenAI's image generation model.
 Players' data are stored in a SQLite database.
 
 Python is used to fill in the database.
+
+<img src="assets/images/example.png" alt="alt text" width="300">
