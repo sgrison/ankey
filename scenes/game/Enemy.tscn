@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgbh1w24j2ob"]
+
+[ext_resource type="Texture2D" uid="uid://cno7j0ke1k4pn" path="res://assets/images/enemies-template-big.png" id="1_8yira"]
+[ext_resource type="Script" path="res://scenes/game/Enemy.gd" id="2_kodv1"]
+[ext_resource type="FontFile" uid="uid://bs2r5u37w7jto" path="res://assets/fonts/VCRosdNEUE.ttf" id="3_se1b6"]
+
+[node name="Enemy" type="Sprite2D"]
+position = Vector2(941, 369)
+texture = ExtResource("1_8yira")
+region_enabled = true
+region_rect = Rect2(1024, 0, 256, 256)
+script = ExtResource("2_kodv1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.328
+offset_left = -127.0
+offset_top = -105.0
+offset_right = -129.0
+offset_bottom = -150.968
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_se1b6")
+theme_override_font_sizes/normal_font_size = 47
+bbcode_enabled = true
+text = "[center]test zer[/center]"
+scroll_active = false

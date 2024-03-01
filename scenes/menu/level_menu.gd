@@ -34,4 +34,4 @@ func _ready():
 
 
 func _on_Button_pressed(button: Button):
-	get_tree().change_scene_to_file("res://scenes/game/main_game.tscn")
+	get_tree().change_scene_to_file("res://scenes/game/Main.tscn")
