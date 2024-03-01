@@ -4,7 +4,7 @@
 
 This Godot project aims at making a fun and interactive version of the worldwide used Anki App.
 
-Graphics are made by me or using OpenAI's image generation model.
+Graphics are made by me or using Aseprite OpenAI's image generation model.
 
 Players' data are stored in a SQLite database.
 
