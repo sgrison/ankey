@@ -23,5 +23,5 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_se1b6")
 theme_override_font_sizes/normal_font_size = 47
 bbcode_enabled = true
-text = "[center]test zer[/center]"
+text = "[center]crusty[/center]"
 scroll_active = false
